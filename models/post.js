@@ -14,19 +14,19 @@ const postSchema= new mongoose.Schema({
         type:String,
         required:true
     },
+    postedBy:{
+        type:ObjectId,
+        ref:'User'
+    },
     likes:[{
         type:ObjectId,
         ref:'User'
     }],
     comments:[{
-        type:String,
+        text:String,
         postedBy:{type:ObjectId, ref:"User"}
-    }],
-    pstedBy:{
-        type:String,
-        ref:'User'
-    }
-
+    }]
+    
 })
 
 module.exports= mongoose.model("Post", postSchema)

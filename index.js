@@ -9,9 +9,10 @@ mongoose.connect(MONGOURI,(err)=>{
     else console.log("Database Connected !")
 })
 
+
 app.use(express.json())
 app.use(require('./routes/auth'))
-
+app.use(require('./routes/post'))
 
 
 const PORT= 3000

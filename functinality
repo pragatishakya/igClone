@@ -1,7 +1,9 @@
+AUTHENTICATION
 signup
 login 
 ----------------
-add post
+POST
+create post
 show post
 delete post
 like post
