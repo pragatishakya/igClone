@@ -66,10 +66,6 @@ router.put("/comment",requireLogin,(req,res)=>{
       })
 })
 
-router.put("/deleteComment/:commentId",requireLogin,(req,res)=>{
-    
-})
-
 router.delete("/deletePost/:id",requireLogin,(req,res)=>{
     Post.findOne({_id:req.params.id})
         .exec((err,post)=>{
@@ -82,8 +78,5 @@ router.delete("/deletePost/:id",requireLogin,(req,res)=>{
             }
         })
 })
-
-
-
 
 module.exports= router

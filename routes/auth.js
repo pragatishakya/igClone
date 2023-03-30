@@ -1,11 +1,10 @@
 const express = require('express')
-const User=require('../models/user')
-const router= express.Router()
-const bcrypt= require('bcrypt')
-const jwt= require('jsonwebtoken')
+const User =require('../models/user')
+const router = express.Router()
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const { SECRETKEY } = require('../keys')
-const requireLogin= require('../middleware/requireLogin')
-
+const requireLogin = require('../middleware/requireLogin')
 
 router.post("/signup", (req,res)=>{
     const {name,email,password,pic}= req.body
@@ -63,4 +62,4 @@ router.get("/protected",requireLogin,(req,res)=>{
     res.json(req.user)
 })
 
-module.exports=router
+module.exports = router 
